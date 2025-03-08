@@ -30,10 +30,7 @@ def get_response(prompt):
     # Here, you may include a more specific prompt or fine-tune the assistant's instructions to provide general remedies
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
-        messages=[
-            {"role": m["role"], "content": m["content"]}
-            for m in st.session_state.messages
-        ] + [{"role": "user", "content": prompt}]
+        messages=messages
     )
     # Access the content directly as an attribute
   
